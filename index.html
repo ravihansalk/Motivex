@@ -57,10 +57,10 @@ nav.main a:hover::after,nav.main a.active::after{width:100%}
 .burger span{display:block;height:3px;background:var(--ink);margin:6px 8px;border-radius:2px;transition:.3s}
 
 /* ---------- Hero slideshow ---------- */
-.hero{position:relative;height:calc(100vh - 144px);min-height:560px;max-height:820px;overflow:hidden;background:var(--ink)}
+.hero{position:relative;height:calc(100vh - 244px);min-height:470px;max-height:720px;overflow:hidden;background:var(--ink)}
 .slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .5s ease,visibility .5s}
 .slide.active{opacity:1;visibility:visible}
-.slide .bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.12);transition:transform 3s ease-out;filter:brightness(1.12) saturate(1.1)}
+.slide .bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.04);transition:transform 3s ease-out;filter:brightness(1.12) saturate(1.1)}
 .slide.active .bg{transform:scale(1)}
 .slide::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,10,12,.72) 0%,rgba(10,10,12,.42) 42%,rgba(10,10,12,0) 100%)}
 .slide h1,.slide h2,.slide p{text-shadow:0 2px 18px rgba(0,0,0,.45)}
@@ -70,7 +70,7 @@ nav.main a:hover::after,nav.main a.active::after{width:100%}
 .slide.active .content > *:nth-child(2){transition-delay:.1s}
 .slide.active .content > *:nth-child(3){transition-delay:.2s}
 .slide.active .content > *:nth-child(4){transition-delay:.3s}
-.slide h1,.slide h2{font-size:clamp(46px,7.2vw,96px);font-weight:800;font-style:italic;max-width:780px;margin:18px 0 18px}
+.slide h1,.slide h2{font-size:clamp(42px,6vw,82px);font-weight:800;font-style:italic;max-width:780px;margin:18px 0 18px}
 .slide h1 em,.slide h2 em{color:var(--red);font-style:italic}
 .slide p{font-size:clamp(16px,1.5vw,19px);color:#d5d7dc;max-width:560px;margin-bottom:34px}
 .slide .actions{display:flex;gap:14px;flex-wrap:wrap}
@@ -287,7 +287,7 @@ footer .hours b{color:#fff;font-weight:500}
   .logo img{height:62px}
   header.site .wrap{height:84px}
   nav.main{top:124px}
-  .hero{height:calc(100svh - 124px);min-height:540px}
+  .hero{height:calc(100svh - 204px);min-height:470px}
   .slide::after{background:linear-gradient(180deg,rgba(10,10,12,.3) 0%,rgba(10,10,12,.72) 70%)}
   .counter{display:none}
   .arrows button{width:44px;height:44px}
