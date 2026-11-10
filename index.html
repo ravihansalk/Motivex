@@ -58,11 +58,12 @@ nav.main a:hover::after,nav.main a.active::after{width:100%}
 
 /* ---------- Hero slideshow ---------- */
 .hero{position:relative;height:calc(100vh - 144px);min-height:560px;max-height:820px;overflow:hidden;background:var(--ink)}
-.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .7s ease,visibility .7s}
+.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .5s ease,visibility .5s}
 .slide.active{opacity:1;visibility:visible}
-.slide .bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.12);transition:transform 4s ease-out}
+.slide .bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.12);transition:transform 3s ease-out;filter:brightness(1.12) saturate(1.1)}
 .slide.active .bg{transform:scale(1)}
-.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,10,12,.92) 0%,rgba(10,10,12,.72) 42%,rgba(10,10,12,.15) 100%)}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,10,12,.72) 0%,rgba(10,10,12,.42) 42%,rgba(10,10,12,0) 100%)}
+.slide h1,.slide h2,.slide p{text-shadow:0 2px 18px rgba(0,0,0,.45)}
 .slide .content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;max-width:var(--wrap);margin:0 auto;padding:0 24px;color:#fff}
 .slide .content > *{opacity:0;transform:translateY(28px);transition:opacity .5s ease,transform .5s ease}
 .slide.active .content > *{opacity:1;transform:none}
@@ -78,7 +79,7 @@ nav.main a:hover::after,nav.main a.active::after{width:100%}
 .dots{display:flex;gap:10px}
 .dots button{width:46px;height:4px;border:0;background:rgba(255,255,255,.3);cursor:pointer;border-radius:2px;position:relative;overflow:hidden}
 .dots button i{position:absolute;inset:0;width:0;background:var(--red)}
-.dots button.active i{animation:fill 3.5s linear forwards}
+.dots button.active i{animation:fill 2.5s linear forwards}
 .paused .dots button.active i{animation-play-state:paused}
 @keyframes fill{to{width:100%}}
 .arrows{display:flex;gap:10px}
@@ -287,7 +288,7 @@ footer .hours b{color:#fff;font-weight:500}
   header.site .wrap{height:84px}
   nav.main{top:124px}
   .hero{height:calc(100svh - 124px);min-height:540px}
-  .slide::after{background:linear-gradient(180deg,rgba(10,10,12,.55) 0%,rgba(10,10,12,.9) 70%)}
+  .slide::after{background:linear-gradient(180deg,rgba(10,10,12,.3) 0%,rgba(10,10,12,.72) 70%)}
   .counter{display:none}
   .arrows button{width:44px;height:44px}
   .strip .wrap{grid-template-columns:1fr}
@@ -648,7 +649,7 @@ footer .hours b{color:#fff;font-weight:500}
       slides=[].slice.call(hero.querySelectorAll('.slide')),
       dotsWrap=document.getElementById('dots'),
       cur=document.getElementById('cur'),
-      idx=0, timer=null, DELAY=3500;
+      idx=0, timer=null, DELAY=2500;
   document.getElementById('tot').textContent=('0'+slides.length).slice(-2);
   slides.forEach(function(_,i){
     var b=document.createElement('button');
